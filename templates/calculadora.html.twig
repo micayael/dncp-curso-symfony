@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<table border="1">
+    <tr>
+        <td>
+            valor 1
+        </td>
+        <td>
+            {% block valor1 %}{% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            valor 2
+        </td>
+        <td>
+            {% block valor2 %}{% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+           operador
+        </td>
+        <td>
+            {% block operador %}{% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            resultado
+        </td>
+        <td>
+            {% block resultado %}{% endblock %}
+        </td>
+    </tr>
+</table>
+
+
+
+{% endblock %}
