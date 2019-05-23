@@ -1,5 +1,5 @@
 calculadora.sumar:
-    path: /calculadora/sumar
+    path: /calculadora/sumar/{valor1}/{valor2}
     controller: App\Controller\Calculadora\SumarController::sumar
 
 calculadora.restar:

@@ -7,12 +7,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SumarController extends AbstractController
 {
-    public function sumar()
+    public function sumar($valor1, $valor2)
     {
-    	$a = 5;
-    	$b = 6;
-
-    	$resultado = $a + $b;
+    	$resultado = $valor1 + $valor2;
 
         return $this->render('calculadora/sumar.html.twig', [
         	'resultado' => $resultado
