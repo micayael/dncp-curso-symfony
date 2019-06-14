@@ -1,0 +1,23 @@
+publico.index:
+    path: /
+    controller: App\Controller\Publico\IndexController::index
+
+publico.contacto:
+    path: /contacto
+    controller: App\Controller\Publico\ContactoController::contacto
+
+publico.productos:
+    path: /productos
+    controller: App\Controller\Publico\ProductosController::productos
+
+publico.producto:
+    path: /producto
+    controller: App\Controller\Publico\ProductoController::producto
+
+publico.noticias:
+    path: /noticias
+    controller: App\Controller\Publico\NoticiasController::noticias
+
+publico.noticia:
+    path: /noticia
+    controller: App\Controller\Publico\NoticiaController::noticia
