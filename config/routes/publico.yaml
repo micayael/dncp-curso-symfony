@@ -1,23 +1,29 @@
 publico.index:
     path: /
     controller: App\Controller\Publico\IndexController::index
+    methods: GET
 
 publico.contacto:
     path: /contacto
     controller: App\Controller\Publico\ContactoController::contacto
+    methods: GET|POST
 
 publico.productos:
     path: /productos
     controller: App\Controller\Publico\ProductosController::productos
+    methods: GET
 
 publico.producto:
     path: /producto
     controller: App\Controller\Publico\ProductoController::producto
+    methods: GET
 
 publico.noticias:
     path: /noticias
     controller: App\Controller\Publico\NoticiasController::noticias
+    methods: GET
 
 publico.noticia:
     path: /noticia
     controller: App\Controller\Publico\NoticiaController::noticia
+    methods: GET
