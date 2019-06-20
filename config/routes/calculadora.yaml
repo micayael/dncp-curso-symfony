@@ -1,0 +1,15 @@
+calculadora.sumar:
+    path: /calculadora/sumar/{valor1}/{valor2}
+    controller: App\Controller\Calculadora\SumarController::sumar
+
+calculadora.restar:
+    path: /calculadora/restar
+    controller: App\Controller\CalculadoraController::restar
+
+calculadora.multiplicar:
+    path: /calculadora/multiplicar
+    controller: App\Controller\CalculadoraController::multiplicar
+
+calculadora.dividir:
+    path: /calculadora/dividir
+    controller: App\Controller\CalculadoraController::dividir
