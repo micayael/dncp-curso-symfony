@@ -3,6 +3,11 @@ publico.index:
     controller: App\Controller\Publico\IndexController::index
     methods: GET
 
+publico.nosotros:
+    path: /nosotros
+    controller: App\Controller\Publico\NosotrosController::nosotros
+    methods: GET
+
 publico.contacto:
     path: /contacto
     controller: App\Controller\Publico\ContactoController::contacto
