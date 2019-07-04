@@ -3,10 +3,26 @@
 namespace App\Controller\Publico;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductoController extends AbstractController
 {
-    public function producto()
+    public function producto($id)
+    {
+        $producto = $this->getProducto($id);
+
+        if (!$producto){
+
+            throw $this->createNotFoundException();
+
+        }
+
+        return $this->render('publico/producto.html.twig', [
+            'producto' => $producto
+        ]);
+    }
+
+    private function getProducto($id)
     {
         $productos = [
             [
@@ -65,6 +81,17 @@ class ProductoController extends AbstractController
             ],
         ];
 
-        return $this->render('publico/producto.html.twig');
+        $producto = null;
+
+        for ($i=0; $i<count($productos); ++$i){
+
+            if($productos[$i]['id'] == $id){
+                $producto = $productos[$i];
+                break;
+            }
+
+        }
+
+        return $producto;
     }
 }

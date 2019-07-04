@@ -7,7 +7,7 @@
         </div>
         <div class="text">
             <h3 class="h5">
-                <a href="{{ path('publico.producto') }}">{{ producto.nombre }}</a>
+                <a href="{{ path('publico.producto', { id: producto.id }) }}">{{ producto.nombre }}</a>
             </h3>
             <p class="price">
                 {% if producto.precio_anterior %}

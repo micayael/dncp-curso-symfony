@@ -19,9 +19,11 @@ publico.productos:
     methods: GET
 
 publico.producto:
-    path: /producto
+    path: /producto/{id}
     controller: App\Controller\Publico\ProductoController::producto
     methods: GET
+    requirements:
+        id: '\d+'
 
 publico.noticias:
     path: /noticias

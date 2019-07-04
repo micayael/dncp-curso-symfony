@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row d-flex align-items-center flex-wrap">
                 <div class="col-md-7">
-                    <h1 class="h2">White Blouse Armani</h1>
+                    <h1 class="h2">{{ producto.nombre }}</h1>
                 </div>
                 <div class="col-md-5">
                     <ul class="breadcrumb d-flex justify-content-end">
@@ -31,9 +31,9 @@
                     <div id="productMain" class="row">
                         <div class="col-sm-6">
                             <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
-                                <div> <img src="img/detailbig1.jpg" alt="" class="img-fluid"></div>
-                                <div> <img src="img/detailbig2.jpg" alt="" class="img-fluid"></div>
-                                <div> <img src="img/detailbig3.jpg" alt="" class="img-fluid"></div>
+                                <div> <img src="{{ asset('img/' ~ producto.imagen) }}" alt="" class="img-fluid"></div>
+                                <div> <img src="{{ asset('img/detailbig2.jpg') }}" alt="" class="img-fluid"></div>
+                                <div> <img src="{{ asset('img/detailbig3.jpg') }}" alt="" class="img-fluid"></div>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -48,7 +48,7 @@
                                             <option value="x-large">X Large</option>
                                         </select>
                                     </div>
-                                    <p class="price">$124.00</p>
+                                    <p class="price">U$S {{ producto.precio }}</p>
                                     <p class="text-center">
                                         <button type="submit" class="btn btn-template-outlined"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                                         <button type="submit" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="btn btn-default"><i class="fa fa-heart-o"></i></button>
@@ -56,9 +56,9 @@
                                 </form>
                             </div>
                             <div data-slider-id="1" class="owl-thumbs">
-                                <button class="owl-thumb-item"><img src="img/detailsquare.jpg" alt="" class="img-fluid"></button>
-                                <button class="owl-thumb-item"><img src="img/detailsquare2.jpg" alt="" class="img-fluid"></button>
-                                <button class="owl-thumb-item"><img src="img/detailsquare3.jpg" alt="" class="img-fluid"></button>
+                                <button class="owl-thumb-item"><img src="{{ asset('img/detailsquare.jpg') }}" alt="" class="img-fluid"></button>
+                                <button class="owl-thumb-item"><img src="{{ asset('img/detailsquare2.jpg') }}" alt="" class="img-fluid"></button>
+                                <button class="owl-thumb-item"><img src="{{ asset('img/detailsquare3.jpg') }}" alt="" class="img-fluid"></button>
                             </div>
                         </div>
                     </div>
