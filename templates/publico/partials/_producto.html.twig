@@ -17,12 +17,12 @@
             </p>
         </div>
         <div class="ribbon-holder">
-            {% if producto.oferta %}
-            <div class="ribbon sale">SALE</div>
+            {% if producto.precio_anterior %}
+            <div class="ribbon sale">OFERTA</div>
             {% endif %}
 
             {% if producto.nuevo %}
-            <div class="ribbon new">NEW</div>
+            <div class="ribbon new">NUEVO</div>
             {% endif %}
         </div>
     </div>
