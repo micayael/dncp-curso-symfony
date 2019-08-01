@@ -10,14 +10,14 @@
                 <a href="{{ path('publico.producto', { id: producto.id }) }}">{{ producto.nombre }}</a>
             </h3>
             <p class="price">
-                {% if producto.precio_anterior %}
-                    <del>${{ producto.precio_anterior }}</del>
+                {% if producto.precioAnterior %}
+                    <del>${{ producto.precioAnterior }}</del>
                 {% endif %}
                 $ {{ producto.precio }}
             </p>
         </div>
         <div class="ribbon-holder">
-            {% if producto.precio_anterior %}
+            {% if producto.precioAnterior %}
             <div class="ribbon sale">OFERTA</div>
             {% endif %}
 

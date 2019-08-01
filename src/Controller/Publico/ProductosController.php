@@ -2,62 +2,24 @@
 
 namespace App\Controller\Publico;
 
+use App\Entity\Producto;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductosController extends AbstractController
 {
-    public function productos()
+    public function productos(EntityManagerInterface $em)
     {
-        $productos = [
-            [
-                'id' => 1,
-                'nombre' => 'Producto 1',
-                'imagen' => 'product1.jpg',
-                'precio' => 143.00,
-                'nuevo' => false,
-                'precio_anterior' => null,
-            ],
-            [
-                'id' => 2,
-                'nombre' => 'Producto 2',
-                'imagen' => 'product2.jpg',
-                'precio' => 143.00,
-                'nuevo' => true,
-                'precio_anterior' => 280,
-            ],
-            [
-                'id' => 3,
-                'nombre' => 'Producto 3',
-                'imagen' => 'product3.jpg',
-                'precio' => 100.00,
-                'nuevo' => true,
-                'precio_anterior' => null,
-            ],
-            [
-                'id' => 4,
-                'nombre' => 'Producto 4',
-                'imagen' => 'product4.jpg',
-                'precio' => 120.00,
-                'nuevo' => false,
-                'precio_anterior' => 150,
-            ],
-            [
-                'id' => 5,
-                'nombre' => 'Producto 5',
-                'imagen' => 'product4.jpg',
-                'precio' => 120.00,
-                'nuevo' => true,
-                'precio_anterior' => 150,
-            ],
-            [
-                'id' => 6,
-                'nombre' => 'Producto 6',
-                'imagen' => 'product4.jpg',
-                'precio' => 120.00,
-                'nuevo' => false,
-                'precio_anterior' => 150,
-            ],
-        ];
+        $productos = $em->getRepository(Producto::class)
+            ->findBy(
+                [
+                    'nuevo' => true
+                ],
+                [
+                    'nombre' => 'ASC'
+                ],
+                9
+            );
 
         return $this->render('publico/productos.html.twig', [
             'productos' => $productos,

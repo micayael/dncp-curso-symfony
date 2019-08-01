@@ -13,7 +13,7 @@ class Producto
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -47,6 +47,12 @@ class Producto
      * @ORM\Column(type="text")
      */
     private $descripcion;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Marca", inversedBy="productos")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $marca;
 
     public function __construct()
     {
@@ -126,6 +132,18 @@ class Producto
     public function setDescripcion(string $descripcion): self
     {
         $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    public function getMarca(): ?Marca
+    {
+        return $this->marca;
+    }
+
+    public function setMarca(?Marca $marca): self
+    {
+        $this->marca = $marca;
 
         return $this;
     }
